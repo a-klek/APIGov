@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SiteTitle">
+        <attr name="id" format="string"/>
+        <attr name="name" format="string"/>
+        <attr name="url" format="string"/>
+    </declare-styleable>
+
+</resources>
