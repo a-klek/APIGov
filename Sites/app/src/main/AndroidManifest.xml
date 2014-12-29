@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.klek.sites" >
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,9 +22,13 @@
             android:label="activity2" >
         </activity>
         <activity
+            android:name=".activityClasses.SiteInfoActivity"
+            android:label="Site Info"></activity>
+        <activity
             android:name=".adapter.SiteInfo"
             android:label="@string/title_activity_site_info" >
         </activity>
+
     </application>
 
 </manifest>

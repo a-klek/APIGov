@@ -44,45 +44,7 @@ public class APIConnector {
 
     public static final String SITE_INFO = "common/siteinfo/?id=";
 
-    public static String getString(String request_type){
-        String urlString = URL + request_type + FORMAT;
-        HttpGet httpGet = new HttpGet(urlString);
-        HttpURLConnection connection;
-        URL url;
-        HttpClient client = new DefaultHttpClient();
-        HttpResponse response;
-       // HttpEntity entity = null;
-        InputStream inputStream = null;
-        //JSONObject jsonObject = null;
-        //JSONArray jsonArray=null;
-        String connectionResult = "";
-        try {
-            //Log.d(Tag,"запрос отправлен");
-            url = new URL(urlString);
-            connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod(CONNECTION_METHOD);
-            connection.setConnectTimeout(CONNECTION_TIMEOUT);
-            connection.setReadTimeout(READ_TIMEOUT);
-            connection.setDoInput(true);
-            connection.connect();
-            inputStream = connection.getInputStream();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String line="";
-            while((line=bufferedReader.readLine())!=null){
-                connectionResult += line;
-            }
-            bufferedReader.close();
-            /*response = client.execute(httpGet);
-            HttpEntity httpEntity = response.getEntity();
-            String line = EntityUtils.toString(httpEntity,"UTF-8");
-            connectionResult = line;
-            //Log.d(Tag,line);*/
 
-        } catch (Exception e) {
-            Log.d("ERRORR", e.getMessage());
-        }
-        return connectionResult;
-    }
 
     public static JSONArray getListFromAPI(String request_type) {
         String urlString = URL + request_type + FORMAT;

@@ -9,7 +9,8 @@
 
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0"/>
+        android:layout_weight="0"
+        android:id="@+id/list_text_view"/>
 
     <ListView
         android:layout_width="fill_parent"
